@@ -1,4 +1,4 @@
-/**** back button ****/
+/**** Buttons ****/
  #btnBack {
 	top: 0;
 	z-index: 99;
@@ -17,7 +17,41 @@
 #btnBack img {
     width: 55%;
 }
-/**** END of back button ****/
+
+.start-game-button {
+	box-shadow:inset 0px 1px 0px 0px #efdcfb;
+	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+	background-color:#dfbdfa;
+	border-radius:6px;
+	border:1px solid #c584f3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:12px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #9752cc;
+}
+.start-game-button:hover {
+	background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+	background-color:#bc80ea;
+}
+.start-game-button:active {
+	position:relative;
+	top:1px;
+}
+
+
+/**** Colors ****/
+.txt-blue {
+	color: blue;
+}
+
+.txt-pink {
+	color: #ef6f85;
+}
 
 h1 {
     display: block;
@@ -38,7 +72,7 @@ h2 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    color: #ef9fad;
+    color: #ef6f85;
 }
 
 body{
@@ -48,7 +82,8 @@ body{
 	padding: 0;
 	margin: 0;
 	font-family: Arial;
-	background-color: skyblue;
+	background-image: url("../images/balloons-background.jpg");
+	background-size: cover;
 }
 
 .balloon{
@@ -139,7 +174,7 @@ body{
 	color: blue;
 }
 .point-row p {
-	color: #ef9fad;
+	color: #ef6f85;
 	font-weight: bold;
 }
 .score-row {
@@ -153,6 +188,21 @@ body{
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
+
+.instructions {
+	background: rgba(255, 255, 255, 0.41);
+    text-align: center;
+    box-shadow: -1px -1px 20px 1px #56565654;
+    padding: 50px;
+}
+
+.instructions h2 {
+	text-decoration: underline;
+}
+
+.instructions div:nth-child(2) {
+    margin-top: 50px;
 }
 
 
