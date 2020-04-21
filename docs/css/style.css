@@ -134,6 +134,9 @@ body{
 .balloon-black{
 	background-image: url(../images/balloon-black.png);
 }
+.balloon-orange{
+	background-image: url(../images/balloon-orange.png)
+}
 
 .plane-blue{
 	background-image: url(../images/plane.png);

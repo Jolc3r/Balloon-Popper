@@ -10,8 +10,8 @@
  * The more balloons the player can "pop" before they hit the ground, the higher the score the player will get. 
  */
 
-//Colors array is seeded so that both black and yellow has a 1/10 chance to appear.  Yellow is worth +5 points and black is worth -5 points.
-let colors = ['yellow', 'red', 'blue', 'violet', 'green', 'black', 'red', 'blue', 'violet', 'green'];
+//Colors array is seeded so that both black and yellow has a 1/11 chance to appear.  Yellow is worth +5 points and black is worth -5 points.
+let colors = ['yellow', 'red', 'blue', 'violet', 'green', 'black', 'red', 'blue', 'violet', 'green', 'orange'];
 //Explicitly name any logo image file names in Logos[] for them to be displayed in app.  150px x 150px is optimal size.
 let logos = ['images/logos/Logo_argo_white.png', 'images/logos/Logo_auntie-annes_white.png', 'images/logos/Logo_brookstone_white.png', 'images/logos/Logo_bsmooth_white.png', 'images/logos/Logo_burrito-beach_white.png', 'images/logos/Logo_chicago-sports_white.png', 'images/logos/Logo_cnn_white.png', 'images/logos/Logo_coach_white.png', 'images/logos/Logo_dunkin-donuts_white.png', 'images/logos/Logo_dunkin-donuts_white.png', 'images/logos/Logo_dunkin-donuts_white.png', 'images/logos/Logo_dunkin-donuts_white.png', 'images/logos/Logo_duty-free-store_white.png', 'images/logos/Logo_field_white.png', 'images/logos/Logo_hudson_white.png', 'images/logos/Logo_mac-cosmetics_white.png', 'images/logos/Logo_nuts-on-clark_white.png', 'images/logos/Logo_rocky-mountain-chocolate_white.png', 'images/logos/Logo_sarahs-candies_white.png', 'images/logos/Logo_shoe-hospital_white.png', 'images/logos/Logo_spirit-of-the-white-horse_white.png', 'images/logos/Logo_talie_white.png'];
 let windowWidth = window.innerWidth;
@@ -170,6 +170,9 @@ function deleteBalloon(elem){
 	
 	switch (elem.className){
 		case "balloon balloon-violet":
+		points +=1;
+		break;
+		case "balloon balloon-orange":
 		points +=1;
 		break;
 		case "balloon balloon-green":
