@@ -1,6 +1,7 @@
 /**** Buttons ****/
  #btnBack {
-	top: 0;
+	top: 5%;
+	left: 4%;
 	z-index: 99;
 	width: auto;
 	height: 1% !important;
@@ -11,11 +12,11 @@
 	margin-bottom: 10px;
 	position: absolute;
 	bottom: 0px;
-	left: 0px;
 }
 
 #btnBack img {
-    width: 55%;
+	width: 55%;
+	
 }
 
 .purple-white-btn {
@@ -56,35 +57,7 @@
 
 
 /**** Colors ****/
-.txt-blue {
-	color: blue;
-}
 
-.txt-pink {
-	color: #ef6f85;
-}
-
-h1 {
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    color: blue;
-}
-
-h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    color: #ef6f85;
-}
 
 body{
 	overflow: hidden;
@@ -142,7 +115,7 @@ body{
 	background-image: url(../images/plane.png);
 }
 
-.total-shadow{
+.total-shadow {
 	width: 100vw;
 	height: 100vh;
 	background: rgba(0,0,0,0.6);
@@ -152,6 +125,12 @@ body{
 	align-items: center;
 	z-index: 1000;
 	position: relative;
+	color: #293c6b;
+}
+
+.total-shadow h4 {
+	font-weight: bolder;
+	font-size: 1.5em;
 }
 
 .total-block{
@@ -183,13 +162,13 @@ body{
 }
 .score-block p {
 	text-align: center;
+	font-weight: bold;
 }
 .score-block p {
-	color: blue;
+	color: #293c6b;
 }
 .point-row p {
-	color: #ef6f85;
-	font-weight: bold;
+	color: #9752cc;
 }
 .score-row {
 	width: 100%;
@@ -208,15 +187,28 @@ body{
 	background: rgba(255, 255, 255, 0.41);
     text-align: center;
     box-shadow: -1px -1px 20px 1px #56565654;
-    padding: 50px;
-}
-
-.instructions h2 {
-	text-decoration: underline;
+	padding: 50px;
+	color: #293c6b;
 }
 
 .instructions div:nth-child(2) {
     margin-top: 50px;
+}
+
+ul {
+	color: #293c6b;
+	font-size: 2em;
+	text-align: center;
+}
+
+li {
+	text-align: left;
+	font-size: 20px;
+	line-height: 1.5em;
+}
+
+#rdy-to-play {
+	font-size: 1.5em;
 }
 
 
