@@ -12,6 +12,8 @@
 	margin-bottom: 10px;
 	position: absolute;
 	bottom: 0px;
+	z-index: 1;
+	
 }
 
 #btnBack img {
@@ -68,6 +70,7 @@ body{
 	font-family: Arial;
 	background-image: url("../images/balloons-background.jpg");
 	background-size: cover;
+	
 }
 
 .balloon{
@@ -75,7 +78,7 @@ body{
 	height: 200px;
 	top: 100vh;
 	position: absolute;
-	z-index: 1;
+	z-index: 11;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -86,7 +89,7 @@ body{
     background-size: cover;
     background-position: center;
 	background-repeat: no-repeat;
-	z-index: 0;
+	z-index: 10;
 }
 
 .balloon-red{
@@ -159,6 +162,7 @@ body{
 	bottom: 0;
 	left: calc(50% - 300px);
 	padding: 5px 0;
+	display: none;
 }
 .score-block p {
 	text-align: center;
