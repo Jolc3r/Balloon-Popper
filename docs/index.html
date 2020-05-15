@@ -3,11 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Balloon Popper</title>
-	<meta http-equiv="refresh" content="120;url=../index.html" />
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-
+<body ondragstart="return false;" ondrop="return false;">
+	<div id="btnBack"> <a href="http://www.flywithbutchohare.com"><img src="images/back_btn.png" alt="Back"></a></div>
 	<div class="score-block">
         <div class="score-row">
             <p>You popped <span class="score">0</span> balloons</p>
@@ -27,31 +26,42 @@
                 <h4>You popped all 100 balloons.</h4>
                 <h4>Your total score was <span class="points">0</span></h4>
                 <div id="win-starsEarned"></div>
-                <p>You are a champion!</p>
+                <h2>You are a champion!</h2>
                 <h2>Don't forget, we have concessions!</h2>
             </div>
 
             <div class="total-wrapper lose">
                 <h1>Fly with Butch O'Hare</h1>
                 <h2>Check out our shops!</h2>
-                <h4>Sorry!</h4>
+                <h3>Sorry!</h4>
                 <img src="images/sad.png" alt="Loser">
                 <h4>You popped <span class="score">0</span> balloons.</h4>
                 <h4>Your total score was <span class="points">0</span></h4>
                 <div id="lose-starsEarned"></div>
                 <h2>We have food, drinks, and more!</h2>
-                <p>Play again?</p>
-                <button class="restart">Yes</button>
-                <button class="cencel">No</button>
+                <h2>Play again?</h2>
+                <button class="restart purple-white-btn">Yes</button>
+                <button class="cencel white-purple-btn">No</button>
             </div>
 		</div>
 	</div>
 	
 	<div class="start-game-window">
             <div class="instructions">
-                <img src="images/instructions.png" alt="Instructions">
+                <!-- <img src="images/instructions.png" alt="Instructions"> -->
+				<div>
+					<img src="./images/balloon-popper_logo.png" alt="Balloon Popper"></img>
+                    <ul><u>How to Play</u></ul>
+                    <li>Pop the colored balloons for 1 point</li>
+                    <li>Make sure to pop all the colored balloons before they reach the top or it is Game Over</li>
+                    <li>Watch out for the black balloons, they are worth -5 points... so don't pop them!</li>
+				</div>
+				<div>
+					<h3 id="rdy-to-play">Are you ready to play?</h3>
+                    <button class="start-game-button purple-white-btn">Start</button>
+                    <button class="back-game-button white-purple-btn">Go Back</button>
+				</div>
             </div>
-		<button class="start-game-button">Start</button>
 	</div>
 
 	<audio src="sounds/bg-music.mp3" class="bg-music" loop></audio>

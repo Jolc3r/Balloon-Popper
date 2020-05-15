@@ -10,8 +10,8 @@
  * The more balloons the player can "pop" before they hit the ground, the higher the score the player will get. 
  */
 
-//Colors array is seeded so that both black and yellow has a 1/10 chance to appear.  Yellow is worth +5 points and black is worth -5 points.
-let colors = ['yellow', 'red', 'blue', 'violet', 'green', 'black', 'red', 'blue', 'violet', 'green'];
+//Colors array is seeded so that both black and yellow has a 1/11 chance to appear.  Yellow is worth +5 points and black is worth -5 points.
+let colors = ['yellow', 'red', 'blue', 'violet', 'green', 'black', 'red', 'blue', 'violet', 'green', 'orange'];
 //Explicitly name any logo image file names in Logos[] for them to be displayed in app.  150px x 150px is optimal size.
 let logos = ['images/logos/Logo_argo_white.png', 'images/logos/Logo_auntie-annes_white.png', 'images/logos/Logo_brookstone_white.png', 'images/logos/Logo_bsmooth_white.png', 'images/logos/Logo_burrito-beach_white.png', 'images/logos/Logo_chicago-sports_white.png', 'images/logos/Logo_cnn_white.png', 'images/logos/Logo_coach_white.png', 'images/logos/Logo_dunkin-donuts_white.png', 'images/logos/Logo_dunkin-donuts_white.png', 'images/logos/Logo_dunkin-donuts_white.png', 'images/logos/Logo_dunkin-donuts_white.png', 'images/logos/Logo_duty-free-store_white.png', 'images/logos/Logo_field_white.png', 'images/logos/Logo_hudson_white.png', 'images/logos/Logo_mac-cosmetics_white.png', 'images/logos/Logo_nuts-on-clark_white.png', 'images/logos/Logo_rocky-mountain-chocolate_white.png', 'images/logos/Logo_sarahs-candies_white.png', 'images/logos/Logo_shoe-hospital_white.png', 'images/logos/Logo_spirit-of-the-white-horse_white.png', 'images/logos/Logo_talie_white.png'];
 let windowWidth = window.innerWidth;
@@ -27,6 +27,8 @@ let planeExists = false;
 let gameOver = false;
 let totalShadow = document.querySelector('.total-shadow');
 let startBtn = document.querySelector('.start-game-button');
+let backBtn = document.querySelector('.back-game-button')
+let backButton = document.querySelector('#btnBack')
 let points = 0;
 let balloonSpeed = 1;
 let balloonCounter = 0;
@@ -172,6 +174,9 @@ function deleteBalloon(elem){
 		case "balloon balloon-violet":
 		points +=1;
 		break;
+		case "balloon balloon-orange":
+		points +=1;
+		break;
 		case "balloon balloon-green":
 		points +=1;
 		break;
@@ -245,6 +250,7 @@ function removeStars(){
 
 function startGame(){
 	restartGame();
+	document.querySelector('.score-block').style.display = 'block';
 	createPlane();
 	let timeout = 0;
 	let loop = setInterval(function(){
@@ -254,11 +260,13 @@ function startGame(){
 		} else if(num !== total) {
 			clearInterval(loop);
 			totalShadow.style.display = 'flex';
+			document.querySelector('.score-block').style.display = 'none';
 			totalShadow.querySelector('.lose').style.display = 'block';
 			updateStars();
 		} else {
 			clearInterval(loop);
 			totalShadow.style.display = 'flex';
+			document.querySelector('.score-block').style.display = 'none';
 			totalShadow.querySelector('.win').style.display = 'block';
 			updateStars();
 		}
@@ -306,16 +314,38 @@ document.querySelector('.restart').addEventListener('click', function(){
 });
 
 document.querySelector('.cencel').addEventListener('click', function(){
-	totalShadow.style.display = 'none';
-	removeStars();
-    restartGame();
-    //document.querySelector('.bg-music').pause();
-    document.querySelector('.start-game-window').style.display = 'flex';
+	window.location.href = 'http://www.flywithbutchohare.com';
 });
 
 startBtn.addEventListener('click', function() {
 	startGame();
 	//document.querySelector('.bg-music').play();
 	document.querySelector('.start-game-window').style.display = 'none';
+	document.querySelector('.score-block').style.display = 'block';
 });
+
+backBtn.addEventListener('click', function() {
+	window.location.href = 'http://www.flywithbutchohare.com';
+});
+
+//Timeout function to return to Game Center after period of inactivity. 
+(() => {
+	var t;
+	//window.onload = resetTimer;
+    window.onmousemove = resetTimer; // catches mouse movements
+    window.onmousedown = resetTimer; // catches mouse movements
+    window.onclick = resetTimer;     // catches mouse clicks
+    window.onscroll = resetTimer;    // catches scrolling
+    window.onkeypress = resetTimer;  //catches keyboard actions
+
+   function reload() {
+          window.location.href = 'http://www.flywithbutchohare.com';  
+   }
+
+   function resetTimer() {
+        clearTimeout(t);
+        t= setTimeout(reload, 120000);  // time is in milliseconds (1000 is 1 second)
+    }	
+})();
+
 
