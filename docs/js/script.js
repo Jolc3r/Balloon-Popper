@@ -27,6 +27,8 @@ let planeExists = false;
 let gameOver = false;
 let totalShadow = document.querySelector('.total-shadow');
 let startBtn = document.querySelector('.start-game-button');
+let backBtn = document.querySelector('.back-game-button')
+let backButton = document.querySelector('#btnBack')
 let points = 0;
 let balloonSpeed = 1;
 let balloonCounter = 0;
@@ -248,6 +250,7 @@ function removeStars(){
 
 function startGame(){
 	restartGame();
+	document.querySelector('.score-block').style.display = 'block';
 	createPlane();
 	let timeout = 0;
 	let loop = setInterval(function(){
@@ -257,11 +260,13 @@ function startGame(){
 		} else if(num !== total) {
 			clearInterval(loop);
 			totalShadow.style.display = 'flex';
+			document.querySelector('.score-block').style.display = 'none';
 			totalShadow.querySelector('.lose').style.display = 'block';
 			updateStars();
 		} else {
 			clearInterval(loop);
 			totalShadow.style.display = 'flex';
+			document.querySelector('.score-block').style.display = 'none';
 			totalShadow.querySelector('.win').style.display = 'block';
 			updateStars();
 		}
@@ -309,16 +314,38 @@ document.querySelector('.restart').addEventListener('click', function(){
 });
 
 document.querySelector('.cencel').addEventListener('click', function(){
-	totalShadow.style.display = 'none';
-	removeStars();
-    restartGame();
-    //document.querySelector('.bg-music').pause();
-    document.querySelector('.start-game-window').style.display = 'flex';
+	window.location.href = 'http://www.flywithbutchohare.com';
 });
 
 startBtn.addEventListener('click', function() {
 	startGame();
 	//document.querySelector('.bg-music').play();
 	document.querySelector('.start-game-window').style.display = 'none';
+	document.querySelector('.score-block').style.display = 'block';
 });
+
+backBtn.addEventListener('click', function() {
+	window.location.href = 'http://www.flywithbutchohare.com';
+});
+
+//Timeout function to return to Game Center after period of inactivity. 
+(() => {
+	var t;
+	//window.onload = resetTimer;
+    window.onmousemove = resetTimer; // catches mouse movements
+    window.onmousedown = resetTimer; // catches mouse movements
+    window.onclick = resetTimer;     // catches mouse clicks
+    window.onscroll = resetTimer;    // catches scrolling
+    window.onkeypress = resetTimer;  //catches keyboard actions
+
+   function reload() {
+          window.location.href = 'http://www.flywithbutchohare.com';  
+   }
+
+   function resetTimer() {
+        clearTimeout(t);
+        t= setTimeout(reload, 120000);  // time is in milliseconds (1000 is 1 second)
+    }	
+})();
+
 
