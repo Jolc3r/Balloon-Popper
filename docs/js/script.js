@@ -184,7 +184,7 @@ function deleteBalloon(elem){
 		points +=1;
 		break;
 		case "balloon balloon-yellow":
-		points +=5;
+		points +=1;
 		break;
 		case "balloon balloon-blue":
 		points +=1;
@@ -312,6 +312,28 @@ document.querySelector('.restart').addEventListener('click', function(){
 	removeStars();
 	startGame();
 });
+
+document.querySelector('#win-back').addEventListener('click', function(){
+	window.location.href = 'http://www.flywithbutchohare.com';
+});
+document.querySelector('#lost-back').addEventListener('click', function(){
+	window.location.href = 'http://www.flywithbutchohare.com';
+});
+document.querySelector('#win-start').addEventListener('click', function(){
+	totalShadow.style.display = 'none';
+	totalShadow.querySelector('.win').style.display = 'none';
+	totalShadow.querySelector('.lose').style.display = 'none';
+	removeStars();
+	startGame();
+});
+document.querySelector('#lost-start').addEventListener('click', function(){
+	totalShadow.style.display = 'none';
+	totalShadow.querySelector('.win').style.display = 'none';
+	totalShadow.querySelector('.lose').style.display = 'none';
+	removeStars();
+	startGame();
+});
+
 
 document.querySelector('.cencel').addEventListener('click', function(){
 	window.location.href = 'http://www.flywithbutchohare.com';

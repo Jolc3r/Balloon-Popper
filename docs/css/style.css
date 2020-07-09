@@ -70,6 +70,7 @@ body{
 	font-family: Arial;
 	background-image: url("../images/balloons-background.jpg");
 	background-size: cover;
+	user-select: none;
 	
 }
 
@@ -202,7 +203,7 @@ body{
 ul {
 	color: #293c6b;
 	font-size: 2em;
-	text-align: center;
+	text-align: left;
 }
 
 li {
